@@ -1,24 +1,34 @@
 package com.c2j.music.jukebox.music;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class MusicItem {
-    public static enum MusicGenre {BLUES, CLASSICAL, JAZZ, RAP, COUNTRY, ROCK, CLASS_ROCK};
+
+    public static enum MusicGenre {BLUES, CLASSICAL, JAZZ, RAP, COUNTRY, ROCK, CLASS_ROCK, POP, DISCO_POP};
     public static enum Regions {ASIA, AFRICA, AUSTRALIA, EUROPE, NORTH_AMERICA, CENTRAL_AMERICA}
 
     private String title;
     private String artist;
     private MusicGenre musicGenre;
     private Regions region;
-    private LocalDate year;
+    private Date year;
     private static final double DEFAULT_PRICE = 1.25;
 
     public MusicItem() {
 
     }
 
-    public MusicItem(String title, String artist, MusicGenre musicGenre, Regions region, LocalDate year) {
+    public MusicItem(String title, String artist, MusicGenre musicGenre, Regions region, String year) {
+        this(title, artist, musicGenre, region, Date.valueOf(year));
+    }
+
+    public MusicItem(String title, String artist, MusicGenre musicGenre, Regions region, Date year) {
         setTitle(title);
+        setArtist(artist);
+        setMusicGenre(musicGenre);
+        setRegion(region);
+        setYear(year);
     }
 
     public String getTitle() {
@@ -57,11 +67,13 @@ public class MusicItem {
         this.region = region;
     }
 
-    public LocalDate getYear() {
+    public Date getYear() {
         return year;
     }
 
-    public void setYear(LocalDate year) {
+    public void setYear(Date year) {
+//        this.year = Date.valueOf(year);
         this.year = year;
     }
+
 }
