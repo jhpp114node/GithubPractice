@@ -8,7 +8,14 @@ public class InMemoryCatelog implements MusicUtilities {
     private static Collection<MusicItem> musicItemCollections = new ArrayList<>();
 
     static {
-        musicItemCollections.add(new MusicItem())
+        musicItemCollections.add(new MusicItem());
+        musicItemCollections.add(new MusicItem());
+        musicItemCollections.add(new MusicItem());
+        musicItemCollections.add(new MusicItem());
+        musicItemCollections.add(new MusicItem());
+        musicItemCollections.add(new MusicItem());
+        musicItemCollections.add(new MusicItem());
+
     }
 
     private InMemoryCatelog() {
